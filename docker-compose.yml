@@ -16,5 +16,8 @@ services:
       - MYSQL_ROOT_PASSWORD=root1234!!
       - TZ=Asia/Seoul
     volumes:
-      - /Users/sklee/Dev/social-login-data # (맥 기준)
+      - mysql-data:/var/lib/mysql # (맥 기준)
 #      - D:\TEMP\MYSQL:/var/lib/mysql (윈도우 기준)
+
+volumes:
+  mysql-data:
