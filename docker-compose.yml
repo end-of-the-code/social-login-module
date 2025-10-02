@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:8.0.36
+    restart: always
+    command:
+      - --lower_case_table_names=1
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+    container_name: mysql-social-login
+    ports:
+      - "3360:3306"
+    environment:
+      - MYSQL_DATABASE=mydb
+      - MYSQL_ROOT_PASSWORD=root1234!!
+      - TZ=Asia/Seoul
+    volumes:
+      - /Users/sklee/Dev/social-login-data # (맥 기준)
+#      - D:\TEMP\MYSQL:/var/lib/mysql (윈도우 기준)
